@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HoverSizeChangerDirective } from './directives/hover-size-changer.directive';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [HoverSizeChangerDirective],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'hover-size-changer';
+  onGrow(size: string): void {
+    console.log('Начал расти с размера:', size);
+  }
+
+  onReduce(size: string): void {
+    console.log('Начал уменьшаться с размера:', size);
+  }
 }
